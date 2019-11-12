@@ -36,6 +36,7 @@
             this.ClearFilesButton = new System.Windows.Forms.Button();
             this.SendRequestButton = new System.Windows.Forms.Button();
             this.MossLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.resulttb = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -113,11 +114,20 @@
             this.MossLinkLabel.TabIndex = 17;
             this.MossLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.MossLinkLabel_LinkClicked);
             // 
+            // resulttb
+            // 
+            this.resulttb.Location = new System.Drawing.Point(225, 367);
+            this.resulttb.Name = "resulttb";
+            this.resulttb.Size = new System.Drawing.Size(585, 167);
+            this.resulttb.TabIndex = 18;
+            this.resulttb.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(833, 546);
+            this.Controls.Add(this.resulttb);
             this.Controls.Add(this.MossLinkLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ErrorLabel);
@@ -144,6 +154,7 @@
         private System.Windows.Forms.Button ClearFilesButton;
         private System.Windows.Forms.Button SendRequestButton;
         private System.Windows.Forms.LinkLabel MossLinkLabel;
+        private System.Windows.Forms.RichTextBox resulttb;
     }
 }
 
