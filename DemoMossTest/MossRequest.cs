@@ -71,7 +71,7 @@ namespace DemoMossTest
         /// <summary>
         /// The language for this request. (-l)
         /// </summary>
-        private string language = "csharp";
+        private string language = "cc";
         public string Language
         {
             get => this.language;

@@ -29,6 +29,7 @@ namespace DemoMossTest
         public MainForm()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace DemoMossTest
         /// </returns>
         private List<string> GetRestrictedFileTypes()
         {
-            var files = ".cs";
+            var files = ".cpp";
             return files.Length > 0 ? files.Split(',').ToList() : new List<string>();
         }
 
@@ -123,6 +124,9 @@ namespace DemoMossTest
                 ShowNewFolderButton = false,
                 RootFolder = Environment.SpecialFolder.Desktop
             };
+            //var sources = CrawResult.StartCrawTable("http://moss.stanford.edu/results/52001710/");
+            var sources = CrawResult.StartCrawTable("http://moss.stanford.edu/results/628866761/");
+            CrawResult.StartCrawDetail("http://moss.stanford.edu/results/628866761/match0.html");
         }
 
         private void SourceFilesButton_Click(object sender, EventArgs e)
@@ -160,6 +164,7 @@ namespace DemoMossTest
 
         private void SendRequestButton_Click(object sender, EventArgs e)
         {
+            
             if (this.IsValidForm())
             {
                 this.ErrorLabel.Text = string.Empty;
@@ -169,7 +174,7 @@ namespace DemoMossTest
                     IsDirectoryMode = false,
                     IsBetaRequest = false,
                     Comments = "",
-                    Language = "csharp",
+                    Language = "cc",
                     NumberOfResultsToShow = 250,
                     MaxMatches = 10
                 };
@@ -180,9 +185,9 @@ namespace DemoMossTest
                 if (request.SendRequest(out var response))
                 {
                     this.MossLinkLabel.Text = response;
-                    var sources = await CrawResult.StartCrawTable(response);
+                    
                     //this.WebBrowser.Navigate(new Uri(response));
-                    var a = 1;
+
                 }
                 else
                 {
